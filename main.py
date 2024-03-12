@@ -1,18 +1,18 @@
-import math
 # Завдання 3
 # Створіть клас Book з атрибутами title (назва
 # книги), author (автор) та genre (жанр). Додайте метод
 # display_info, який виведе інформацію про книгу у
 # вигляді "Назва: {title}, Автор: {author}, Жанр: {genre}".
 
-class Circle:
-    def __init__(self, radius):
-        self.radius = radius
+class Book:
+    def __init__(self, tittle, author, genre):
+        self.tittle = tittle
+        self.author = author
+        self.genre = genre
 
-    def area(self):
-        # print(f"{self.radius ** 2 * 3.14}")
-        return self.radius ** 2 * math.pi
+    def display_info(self):
+        print(f"Назва: {self.tittle}, Автор: {self.author}, Жанр: {self.genre}")
 
 
-circle1 = Circle(5)
-print(f"{circle1.area()}")
+book1 = Book("Гарі Поттер","Джоан Роулінг", "фентезі")
+book1.display_info()
