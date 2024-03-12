@@ -1,25 +1,16 @@
-class Animals:
-    def move(self):
-        print('Рухається')
+# Завдання 1
+# Створіть клас Student з атрибутами name та age.
+# Додайте метод print_info, який виведе інформацію про
+# студента у на вигляді "Ім'я: {name}, Вік: {age}".
 
-    def eat_food(self):
-        print('їсть')
-
-
-class Dogs(Animals):
-    def __init__(self, name, age, breed):
+class Student:
+    def __init__(self, name, age):
         self.name = name
         self.age = age
-        self.breed = breed
+
+    def print_info(self):
+        print(f"Ім'я студента - {self.name} та його вік {self.age}")
 
 
-class Cats(Animals):
-    pass
-
-
-# створення екземпляру класу
-my_dog = Dogs("Rex", 2, "bulldog")
-# методи
-# my_dog.eat_food()
-# my_dog.move()
-print(my_dog.name)
+student1 = Student("Іван", 20)
+student1.print_info()
