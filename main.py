@@ -1,27 +1,47 @@
-# Завдання 5
-# Створіть клас BankAccount з атрибутами balance
-# та owner, а також методами deposit та withdraw для
-# здійснення операцій з балансом. Реалізуйте перевірку
-# на те, що баланс не може стати від'ємним.
+# Створіть клас «Дріб». Збережіть у класі
+# чисельник та знаменник. Реалізуйте методи класу для
+# введення-виведення даних. Також створіть методи
+# класу для виконання арифметичних операцій
+# (додавання, віднімання, множення, ділення і т. д.).
 
-class BankAccount:
-    def __init__(self, balance, owner):
-        self.balance = balance
-        self.owner = owner
+class Fraction:
+    def __init__(self, numerator, denominator):
+        self.numerator = numerator
+        self.denominator = denominator
 
-    def deposit(self, dep):
-        self.balance += dep
-        return f"Внесену суму додано до балансу. Сумарний баланс: {self.balance}"
+    def display_fraction(self):
+        print(f"{self.numerator}/{self.denominator}")
 
-    def withdraw(self, withdraw):
-        if withdraw > self.balance:
-            return f"Ви можете зняти не більше {self.balance}"
-        else:
-            self.balance -= withdraw
-            return f"Вказану суму знято з балансу. Ваш залишок: {self.balance}"
+    def add(self, other_fraction):
+        result_numerator = self.numerator * other_fraction.denominator + other_fraction.numerator * self.denominator
+        result_denominator = self.denominator * other_fraction.denominator
+        return Fraction(result_numerator, result_denominator)
+
+    def subtract(self, other_fraction):
+        result_numerator = self.numerator * other_fraction.denominator - other_fraction.numerator * self.denominator
+        result_denominator = self.denominator * other_fraction.denominator
+        return Fraction(result_numerator, result_denominator)
+
+    def multiply(self, other_fraction):
+        result_numerator = self.numerator * other_fraction.numerator
+        result_denominator = self.denominator * other_fraction.denominator
+        return Fraction(result_numerator, result_denominator)
+
+    def divide(self, other_fraction):
+        result_numerator = self.numerator * other_fraction.denominator
+        result_denominator = self.denominator * other_fraction.numerator
+        return Fraction(result_numerator, result_denominator)
 
 
-bankAccount1 = BankAccount(234, "client101")
-print(bankAccount1.deposit(20))
-print(bankAccount1.withdraw(100))
-print(bankAccount1.withdraw(200))
+fraction1 = Fraction(1, 2)
+fraction2 = Fraction(1, 2)
+fraction1.display_fraction()
+fraction2.display_fraction()
+result = fraction1.add(fraction2)
+result.display_fraction()
+result = fraction1.subtract(fraction2)
+result.display_fraction()
+result = fraction1.multiply(fraction2)
+result.display_fraction()
+result = fraction1.divide(fraction2)
+result.display_fraction()
