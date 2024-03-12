@@ -1,16 +1,21 @@
+import math
+# Завдання 2
+#  Створіть клас Circle з атрибутом radius та методом
+# area, який поверне площу кола з вказаним радіусом.
+
 # Завдання 1
 # Створіть клас Student з атрибутами name та age.
 # Додайте метод print_info, який виведе інформацію про
 # студента у на вигляді "Ім'я: {name}, Вік: {age}".
 
-class Student:
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
+class Circle:
+    def __init__(self, radius):
+        self.radius = radius
 
-    def print_info(self):
-        print(f"Ім'я студента - {self.name} та його вік {self.age}")
+    def area(self):
+        # print(f"{self.radius ** 2 * 3.14}")
+        return self.radius ** 2 * math.pi
 
 
-student1 = Student("Іван", 20)
-student1.print_info()
+circle1 = Circle(5)
+print(f"{circle1.area()}")
