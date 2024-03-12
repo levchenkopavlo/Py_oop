@@ -1,18 +1,18 @@
-# Завдання 3
-# Створіть клас Book з атрибутами title (назва
-# книги), author (автор) та genre (жанр). Додайте метод
-# display_info, який виведе інформацію про книгу у
-# вигляді "Назва: {title}, Автор: {author}, Жанр: {genre}".
+# Завдання 4
+#  Створіть клас Car з атрибутами brand (марка
+# автомобіля), model (модель) та year (рік випуску).
+# Додайте метод start_engine, який виведе повідомлення
+# про те, що двигун запущено.
 
-class Book:
-    def __init__(self, tittle, author, genre):
-        self.tittle = tittle
-        self.author = author
-        self.genre = genre
+class Car:
+    def __init__(self, brand, model, year):
+        self.brand = brand
+        self.model = model
+        self.year = year
 
-    def display_info(self):
-        print(f"Назва: {self.tittle}, Автор: {self.author}, Жанр: {self.genre}")
+    def start_engine(self):
+        print(f"Двигун запущено")
 
 
-book1 = Book("Гарі Поттер","Джоан Роулінг", "фентезі")
-book1.display_info()
+car1 = Car("Tesla","X", "2023")
+car1.start_engine()
