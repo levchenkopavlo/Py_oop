@@ -1,13 +1,14 @@
-# Завдання 5
-# Створіть клас BankAccount з атрибутами balance
-# та owner, а також методами deposit та withdraw для
-# здійснення операцій з балансом. Реалізуйте перевірку
-# на те, що баланс не може стати від'ємним.
-
-class BankAccount:
-    def __init__(self, balance, owner):
-        self.balance = balance
-        self.owner = owner
+# Завдання 1
+# Реалізуйте клас «Людина». Збережіть у класі: ПІБ,
+# дату народження, контактний телефон, місто, країну,
+# домашню адресу. Реалізуйте методи класу для введення-виведення даних та інших операцій.
+class Human:
+    def __init__(self, fullName, bDate,tel,city, country):
+        self.fullName = fullName
+        self.bDate = bDate
+        self.tel = tel
+        self.city = city
+        self.country = country
 
     def deposit(self, dep):
         self.balance += dep
