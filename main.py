@@ -1,16 +1,16 @@
-# Завдання 3
-#  До вже реалізованого класу «Автомобіль» додайте
+# Завдання 4
+# До вже реалізованого класу «Книга» додайте
 # необхідні перевантажені методи та оператори.
 
-class Car:
-    def __init__(self, brand, model, year, capacity):
-        self.brand = brand
-        self.model = model
-        self.year = year
+class Book:
+    def __init__(self, tittle, author, genre, capacity):
+        self.tittle = tittle
+        self.author = author
+        self.genre = genre
         self.capacity = capacity
 
-    def __str__(self):
-        return f"Brand: {self.brand};\nModel: {self.model};\nYear: {self.year};\nCapacity: {self.capacity}."
+          jk    def __str__(self):
+        return f"Назва: {self.tittle}\nАвтор: {self.author}\nЖанр: {self.genre}"
 
     def __eq__(self, other):
         return self.brand == other.brand and self.model == other.model and self.year == other.year
@@ -28,6 +28,5 @@ class Car:
         print(f"Двигун {self.brand} {self.model} запущено")
 
 
-car1 = Car("Tesla", "X", "2023", 4)
-car2 = Car("Opel", "Astra", "2012", 5)
-car1.start_engine()
+book1 = Book("Гарі Поттер","Джоан Роулінг", "фентезі")
+book1.display_info()
