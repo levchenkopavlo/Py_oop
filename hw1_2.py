@@ -28,7 +28,7 @@ class City:
         print(f"Disaster! {self.name} is destroyed. Save yourself!!")
 
 
-city1 = City("Toronto", "Ontario", "Canada", 2794000, "416", "+1")
+city1 = City("Toronto", "Ontario", "Canada", 2794000, "416", "+1 905")
 print(city1.info())
 city1.populationUp(10000000)
 print(city1.population)
