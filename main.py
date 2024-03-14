@@ -1,37 +1,33 @@
-# Завдання 1
-#  Створіть клас «Дріб». Збережіть у класі чисельник
-# та знаменник. Реалізуйте методи класу для введеннявиведення даних. Також створіть методи класу для
-# виконання арифметичних операцій (додавання, віднімання, множення, ділення і т. д.). До вже
-# реалізованого класу «Дріб» додайте необхідні перевантажені методи та оператори.
-class Fraction:
-    def __init__(self, numerator, denominator):
-        self.numerator = numerator
-        self.denominator = denominator
+# Завдання 3
+#  До вже реалізованого класу «Автомобіль» додайте
+# необхідні перевантажені методи та оператори.
+
+class Car:
+    def __init__(self, brand, model, year, capacity):
+        self.brand = brand
+        self.model = model
+        self.year = year
+        self.capacity = capacity
 
     def __str__(self):
-        return f"{self.numerator}/{self.denominator}"
+        return f"Brand: {self.brand};\nModel: {self.model};\nYear: {self.year};\nCapacity: {self.capacity}."
 
-    def __add__(self, other):
-        new_numerator = self.numerator * other.denominator + other.numerator * self.denominator
-        new_denominator = self.denominator * other.denominator
-        return Fraction(new_numerator, new_denominator)
+    def __eq__(self, other):
+        return self.brand == other.brand and self.model == other.model and self.year == other.year
 
-    def __sub__(self, other):
-        new_numerator = self.numerator * other.denominator - other.numerator * self.denominator
-        new_denominator = self.denominator * other.denominator
-        return Fraction(new_numerator, new_denominator)
+    def __lt__(self, other):
+        return self.capacity < other.capacity
 
-    def __mul__(self, other):
-        new_numerator = self.numerator * other.numerator
-        new_denominator = self.denominator * other.denominator
-        return Fraction(new_numerator, new_denominator)
+    def __gt__(self, other):
+        return self.capacity > other.capacity
 
-    def __truediv__(self, other):
-        new_numerator = self.numerator * other.denominator
-        new_denominator = self.denominator * other.numerator
-        return Fraction(new_numerator, new_denominator)
+    def __abs__(self):
+        return f"ABS function is unlocked"
+
+    def start_engine(self):
+        print(f"Двигун {self.brand} {self.model} запущено")
 
 
-fraction1 = Fraction(1, 2)
-fraction2 = Fraction(3, 4)
-print(fraction1 + fraction2)
+car1 = Car("Tesla", "X", "2023", 4)
+car2 = Car("Opel", "Astra", "2012", 5)
+car1.start_engine()
