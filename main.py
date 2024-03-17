@@ -13,7 +13,7 @@ class City:
         self.telCode = telCode
 
     def __str__(self):
-        return [self.name, self.region, self.country, self.population, self.zipCode, self.zipCode]
+        return [self.name, self.region, self.country, self.population, self.zipCode, self.telCode]
 
     def __eq__(self, other):
         return self.name == other.name and self.zipCode == other.zipCode
@@ -42,10 +42,11 @@ class City:
             self.zipCode = input("Введіть поштовий код: ")
             self.telCode = input("Введіть код телефону міста: ")
             if self.name == "" or self.region == "" or self.country == "" or self.zipCode == "" or not self.telCode.replace(
-                    "+", "").isdigit():
+                    "+", "").isdigit() or not self.population.isdigit():
                 print("Помилка вводу даних. Введіть знову.")
                 continue
             else:
+                self.population = int(self.population)
                 break
 
     def info(self):
@@ -72,3 +73,4 @@ city1.demolish()
 city2 = City()
 city2.input_data()
 print(city2.info())
+print(city2.__str__())
