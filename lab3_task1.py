@@ -4,7 +4,7 @@
 # дані можна отримати лише через методи класу.
 
 class User:
-    def __init__(self, name, age, mail):
+    def __init__(self, name="", age="", mail=""):
         self.__name = name
         self.__age = age
         self.__mail = mail
@@ -28,7 +28,8 @@ class User:
         return self.__mail
 
 
-user1 = User
-user1.set_name("u1")
+user1 = User()
+user1.set_name("u1", )
 user1.set_mail("u1@mail.com")
-
+print(user1.get_name())
+print(user1.get_mail())
