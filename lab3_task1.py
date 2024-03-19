@@ -9,6 +9,7 @@ class User:
         self.__age = age
         self.__mail = mail
 
+
     def set_name(self, new_name):
         self.__name = new_name
 
