@@ -1,26 +1,34 @@
-class Animals:
-    def move(self):
-        print('Рухається')
+# Завдання 1
+# Створіть клас "Користувач" з атрибутами "ім'я", "вік" та
+# "email". Застосуйте інкапсуляцію, щоб забезпечити, що ці
+# дані можна отримати лише через методи класу.
 
-    def eat_food(self):
-        print('їсть')
+class User:
+    def __init__(self, name, age, mail):
+        self.__name = name
+        self.__age = age
+        self.__mail = mail
+
+    def set_name(self, new_name):
+        self.__name = new_name
+
+    def set_age(self, age):
+        self.__age = age
+
+    def set_mail(self, mail):
+        self.__mail = mail
+
+    def get_name(self):
+        return self.__name
+
+    def get_age(self):
+        return self.__age
+
+    def get_mail(self):
+        return self.__mail
 
 
-class Dogs(Animals):
-    def __init__(self, name, age, breed):
-        self.name = name
-        self.age = age
-        self.breed = breed
-
-
-class Cats(Animals):
-    pass
-
-
-# створення екземпляру класу
-my_dog = Dogs("Rex", 2, "bulldog")
-# методи
-# my_dog.eat_food()
-# my_dog.move()
-print(my_dog.name)
+user1 = User
+user1.set_name("u1")
+user1.set_mail("u1@mail.com")
 
