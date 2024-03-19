@@ -1,3 +1,6 @@
+import re
+
+
 # Завдання 5
 # Реалізуйте клас «Вебсайт». Збережіть у класі: назву
 # вебсайту, адресу та опис вебсайту. Реалізуйте конструктор
@@ -12,12 +15,14 @@ class Site:
     def input_data(self):
         while True:
             self.name = input("Введіть назву сайту: ")
-            self.url = input("Введіть адресу: ")
+            url = input("Введіть адресу: ")
             self.description = input("Введіть короткий опис сайту: ")
-            if self.name == "" or self.url == "":
+            pattern = r'^https?://(?:www\.)?[\w.-]+\.[a-zA-Z]{2,}$'
+            if self.name == "" or self.url == "" or not re.search(pattern, url):
                 print("Помилка вводу даних. Введіть знову.")
                 continue
             else:
+                self.url = url
                 break
 
     def __str__(self):
