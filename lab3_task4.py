@@ -9,7 +9,7 @@ class Computer:
         self.__gpu = gpu
 
     def __str__(self):
-        return [self.__cpu, self.__ram, self.__gpu]
+        return f'{self.__cpu}, {self.__ram}, {self.__gpu}'
 
     def info(self):
         return f'CPU: {self.__cpu};RAM: {self.__ram};GPU: {self.__gpu}.'
@@ -38,6 +38,6 @@ computer1.set_cpu("Intel G2020")
 computer1.set_ram("Goodram 8Gb")
 computer1.set_gpu("Intel integrated")
 
-print(computer1.get_cpu())
+print(f'{computer1.get_cpu()}')
 print(computer1.info())
 print(computer1.__str__())
