@@ -42,6 +42,19 @@ class Booking:
     def set_cost(self, cost):
         self.__cost = cost
 
+    def get_name(self):
+        return self.__name
+
+    def get_room_type(self):
+        return self.__room_type
+
+    def get_days(self):
+        return self.__days
+
+    def get_cost(self):
+        return self.__cost
+
+
 booking1 = Booking()
 print(booking1.__str__())
 booking1.input()

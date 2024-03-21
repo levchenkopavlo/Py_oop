@@ -22,7 +22,7 @@ class Taxi_orders:
             self.__address = input("Введіть адресу: ")
             self.__car_type = input("Введіть тип автомобіля: ")
             cost = input("Введіть вартість: ")
-            if self.__name == "" or self.__address == "" or self.__car_type or not cost.isdigit():
+            if self.__name == "" or self.__address == "" or self.__car_type == "" or not cost.isdigit():
                 print("Помилка вводу даних. Введіть знову.")
                 continue
             else:
@@ -30,21 +30,34 @@ class Taxi_orders:
                 break
 
     def show(self):
-        return f"Ім'я: {self.__name};\nТип кімнати: {self.__address};\nДнів: {self.__car_type};\nВартість: {self.__cost}."
+        return f"Ім'я: {self.__name};\nАдреса: {self.__address};\nТип автомобіля: {self.__car_type};\nВартість: {self.__cost}."
 
-    def set_room_type(self, room_type):
-        self.__address = room_type
+    def set_address(self, address):
+        self.__address = address
 
-    def set_days(self, days):
-        self.__car_type = days
+    def set_car_type(self, car_type):
+        self.__car_type = car_type
 
     def set_cost(self, cost):
         self.__cost = cost
 
-booking1 = Taxi_orders()
-print(booking1.__str__())
-booking1.input()
-print(booking1.show())
-booking1.set_days(8)
-print(booking1.show())
-del booking1
+    def get_name(self):
+        return self.__name
+
+    def get_address(self):
+        return self.__address
+
+    def get_car_type(self):
+        return self.__car_type
+
+    def get_cost(self):
+        return self.__cost
+
+
+order1 = Taxi_orders()
+print(order1.__str__())
+order1.input()
+print(order1.show())
+order1.set_car_type("lux")
+print(order1.show())
+del order1
