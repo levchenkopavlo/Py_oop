@@ -14,14 +14,14 @@ class Character:
 
     # @staticmethod
     def attack(self, other):
-        if other.__damage>self.__health:
-            return f'{self.__name} програв'
+        if self.__damage > other.__health:
+            return f'{other.__name} програв'
         else:
-            self.__health -= other.__damage
-            return f'{self.__name} атакував {other.__name}, залишок healt: {self.__health}'
+            other.__health -= self.__damage
+            return f'{self.__name} атакував гравця {other.__name}, залишок healt: {other.__health}'
 
 
 user1 = Character("user1", 100, 8)
 user2 = Character("user2", 120, 7)
 
-print(user2.attack(user1))
+print(user1.attack(user2))

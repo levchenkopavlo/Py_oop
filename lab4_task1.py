@@ -20,6 +20,10 @@ class Contact:
     def get_object_count():
         return Contact.count
 
+    @staticmethod
+    def get_fullName():
+        return se
+
     def info(self):
         if self.fullName == "":
             return None
