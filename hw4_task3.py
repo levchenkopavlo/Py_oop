@@ -10,7 +10,8 @@ class Metric_converter:
     def m_to_e(length):
         Metric_converter.__counter += 1
         result = length / 0.0254
-        str_result = f"{length} метрів = "
+        # str_result = f"{length} метрів = "
+        str_result = f""
         if result // 63360:
             str_result += f'{round(result // 63360)} миль '
             result = result % 63360
@@ -27,7 +28,8 @@ class Metric_converter:
     def e_to_m(length):
         Metric_converter.__counter += 1
         result = length * 0.0254
-        str_result = f"{length} дюймів = "
+        # str_result = f"{length} дюймів = "
+        str_result = f""
         if result // 1000:
             str_result += f'{round(result // 1000)} кілометрів '
             result = result % 1000
@@ -42,15 +44,42 @@ class Metric_converter:
         return Metric_converter.__counter
 
 
-с2 = Metric_converter()
+measure = {'1': 'кілометрах', '2': 'метрах', '3': 'сантиметрах', '4': 'милях', '5': 'ярдах', '6': 'футах',
+           '7': 'дюймах'}
+while True:
+    print(f"\033[33m1\033[0m. Конвертувати кілометри")
+    print(f"\033[33m2\033[0m. Конвертувати метри")
+    print(f"\033[33m3\033[0m. Конвертувати сантиметри")
+    print(f"\033[33m4\033[0m. Конвертувати милі")
+    print(f"\033[33m5\033[0m. Конвертувати ярди")
+    print(f"\033[33m6\033[0m. Конвертувати фути")
+    print(f"\033[33m7\033[0m. Конвертувати дюйми")
+    userChoice = input("Виберіть необхідний пункт меню (Enter для виходу): ")
+    if userChoice.isdigit():
+        if 0 < int(userChoice) < 8:
+            length = input(f"Введіть довжину в {measure[userChoice]}: ")
+            if length.replace('.', '', 1).isdigit():
+                length_d = float(length)
+                match userChoice:
+                    case "1":
+                        print(Metric_converter.m_to_e(length_d * 1000))
+                    case "2":
+                        print(Metric_converter.m_to_e(length_d))
+                    case "3":
+                        print(Metric_converter.m_to_e(length_d / 100))
+                    case "4":
+                        print(Metric_converter.e_to_m(length_d * 63360))
+                    case "5":
+                        print(Metric_converter.e_to_m(length_d * 36))
+                    case "6":
+                        print(Metric_converter.e_to_m(length_d * 12))
+                    case "7":
+                        print(Metric_converter.e_to_m(length_d))
 
-print(Metric_converter.m_to_e(2200))
-print(Metric_converter.e_to_m(1))
-print(Metric_converter.e_to_m(100000))
-
-с3 = Metric_converter()
-print(с2.e_to_m(1))
-print(с3.e_to_m(1))
+        else:
+            continue
+    elif userChoice == '':
+        break
+    else:
+        continue
 print(f'Кількість викликів конвертера: {Metric_converter.get_counter()}')
-print(f'Кількість викликів конвертера: {с2.get_counter()}')
-print(f'Кількість викликів конвертера: {с3.get_counter()}')

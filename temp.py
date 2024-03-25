@@ -5,4 +5,4 @@ class MyMenu:
 
 
 
-set MyMenu.
+# set MyMenu.
