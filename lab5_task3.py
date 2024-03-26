@@ -35,6 +35,10 @@ class Kangaroo(Animal):
         super().__init__(name, "Сумчастий", "?")
         self._jump_length = jump_length
 
+    def get_info(self):
+        print(
+            f"Назва: {self._name};\nСімейство: {self._family};\nЗвуки:{self._sound};\nДовжина стрибка:{self._jump_length}.")
+
 
 tiger1 = Tiger("Тигр непальський")
 tiger1.get_info()
