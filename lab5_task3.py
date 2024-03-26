@@ -24,13 +24,16 @@ class Crocodile(Animal):
     def __init__(self, name, tail_length):
         super().__init__(name, "Крокодилові", "гр-гр")
         self._tail_length = tail_length
+
     def get_info(self):
         print(
             f"Назва: {self._name};\nСімейство: {self._family};\nЗвуки:{self._sound};\nДовжина хвоста:{self._tail_length}.")
 
+
 class Kangaroo(Animal):
-    def __init__(self, name):
+    def __init__(self, name, jump_length):
         super().__init__(name, "Сумчастий", "?")
+        self._jump_length = jump_length
 
 
 tiger1 = Tiger("Тигр непальський")
