@@ -12,7 +12,7 @@ class Pet:
         self._name = name
 
     def get_name(self):
-        print(f'My name {self._name}')
+        print(f'My name is {self._name}')
 
     def sound(self):
         print(f'animal sound')

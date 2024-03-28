@@ -26,7 +26,7 @@ class Auto(Wheel, Engine, Doors):
         Doors.__init__(self, door_number)
 
     def info(self):
-        print(f'{self.__dict__.values()}')
+        print(f'{list(self.__dict__.values())}')
 
 
 car1 = Auto(18, 144, 2)
