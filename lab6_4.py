@@ -14,6 +14,9 @@ class Employer:
     def __str__(self):
         return f'{self.__dict__}'
 
+    def __int__(self):
+        return self._age
+
 
 class President(Employer):
     def __init__(self, name, age):
@@ -36,12 +39,13 @@ class Worker(Employer):
         super().__init__(name, age)
 
 
-president1 = President('John',65)
+president1 = President('John', 65)
 president1.print()
 print(president1)
-manager1 = Manager('Jill',33)
+print(president1.__int__())
+manager1 = Manager('Jill', 33)
 manager1.print()
 print(manager1)
-worker1 = Worker('Joe',40)
+worker1 = Worker('Joe', 40)
 worker1.print()
 print(worker1)
